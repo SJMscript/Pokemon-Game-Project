@@ -1,0 +1,37 @@
+body{
+    margin: 0;
+    background-color: lightgrey;
+    
+}
+
+#my-canvas{
+    border: groove 2px black;
+    background-color: sandybrown;
+    box-shadow: 10px 10px 5px 5px #888888;
+}
+
+#start-btn, #restart-btn {
+    background-color: yellow;
+    width: 95px;
+    height: 45px;
+    border-radius: 60px;
+    color: blue;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 45px;
+}
+
+#my-canvas, #gameover-screen {
+    display: none;
+}
+
+#welcome-screen-img {
+    width: 450px;
+    margin-bottom: 60px;
+}
