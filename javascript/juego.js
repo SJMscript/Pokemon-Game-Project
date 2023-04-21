@@ -6,15 +6,18 @@ class Juego {
         //* fondo,  
         this.background = new Image()
         this.background.src = "img/battle-field.png"
-        console.log(this.background)
+
 
         //* Dragonite
         this.dragonite = new Dragonite()
-        console.log(this.dragonite)
+
 
         //* Gengar
         this.gengar = new Gengar()
-        console.log(this.gengar)
+
+
+        this.disparosDragoniteArr = [];
+        this.disparosGengarArr = [];
 
         this.isGameOn = true; //? condicional con lo ultimo del codigo que es la recursión
 
@@ -69,23 +72,30 @@ class Juego {
         ctx.clearRect(0, 0, canvas.width, canvas.height)
     }
 
-    removerDisparoGengar = () => { //! importante remover del juego elementos que salen del canvas
-        //* remover los disparos de gengar que salieron del canvas
-        //* cuando el primer elemento del array tenga una posicion fuera del canvas, remuevelo
-        if(this.tubosArr[0].x + this.tubosArr[0].w < 0 ){
-            this.tubosArr.shift()
-            this.score += 0.5;
-        } 
+    disparaDragonite = () => {
+        //? debería hacer un forEach para cada uno de los disparos de Dragonite??
     }
 
+    disparaGengar = () => {
+        //? debería hacer un forEach para cada uno de los disparos de Gengar??
+    }
+    
+
     removerDisparoDragonite = () => { //! importante remover del juego elementos que salen del canvas
-        //* remover los disparos de Dragonite que salieron del canvas
-        //* cuando el primer elemento del array tenga una posicion fuera del canvas, remuevelo
-        if(this.tubosArr[0].x + this.tubosArr[0].w < 0 ){
-            this.tubosArr.shift()
-            this.score += 0.5;
+
+        if(this.disparosDragoniteArr[0].x + this.disparosDragoniteArr[0].w > 800 ){
+            this.disparosDragoniteArr.shift()
+            this.score += 1;
         } 
     }     
+
+    removerDisparoGengar = () => { //! importante remover del juego elementos que salen del canvas
+
+        if(this.disparosGengarArr[0].x + this.disparosGengarArr[0].w < 0 ){
+            this.disparosGengarArr.shift()
+            this.score += 1;
+        } 
+    }
 
     //* bonus 
     drawScore = () =>{
@@ -100,11 +110,9 @@ class Juego {
         //todo 
 
         //! 2 acciones y movimientos de elementos (ACCIONES AUTOMÁTICAS)
-        //this.gengar.move()
-        // this.pollito.jump() //! no la llamo aqui porque no es una accion automatica sino solo cuando aprieto boton
-
-        //this.checkCollisionPollitoTubo()
-
+        
+        this.gengar.move()
+        this.gengar.rebotar()
 
 
         //! 3 EL dibujado de los elementos ---> EL ORDEN ES IMPORTANTÍSIMO
