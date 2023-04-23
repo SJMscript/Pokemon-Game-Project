@@ -1,13 +1,14 @@
 class DisparoGengar {
     constructor() {
         this.img = new Image()
-        this.img.src = "img/fuego1.png";
+        this.img.src = "img/psiquico1.png";
         
-        this.x = 0;
-        this.y = 0;
-        this.w = 0;
-        this.h = 0;
-        this.speed = 2;
+        this.x = this.gengar.x; //todo quiero que la posicion de x de la que salga el disparo sea igual a la del gengar en el momento del disparo
+        this.y = this.gengar.y; //todo lo mismo con la posicion en y
+        this.w = 12;
+        this.h = 5;
+        this.speed = 8;
+        this.timer = 0;
         
     }
 
@@ -17,5 +18,11 @@ class DisparoGengar {
     
     move = () => {
         this.x += this.speed
+    }
+
+    //todo quiero intentar usar el timer para que dispare cada 3 segundos
+
+    disparar = () => {
+        
     }
 }

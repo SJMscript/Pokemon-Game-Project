@@ -12,11 +12,12 @@ body{
 
 #start-btn, #restart-btn {
     background-color: yellow;
-    width: 95px;
-    height: 45px;
+    width: 170px;
+    height: 70px;
     border-radius: 60px;
     color: blue;
     font-weight: bold;
+    font-size: 29px;
 }
 
 .container {
@@ -34,4 +35,9 @@ body{
 #welcome-screen-img {
     width: 450px;
     margin-bottom: 60px;
+}
+
+#section{
+    background-image: url("img/gengarfamily.jpg");
+    height: 480px;
 }

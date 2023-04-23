@@ -43,8 +43,13 @@ const startGame = () => {
 startBtnDOM.addEventListener("click", startGame)
 // restartBtnDOM.addEventListener("click", restartGame)
 
-/*window.addEventListener("keydown", (event) => {
-    if(gameObj !== undefined && event.code === "Space"){
-        gameObj.pollito.jump()
+window.addEventListener("keydown", (event) => {
+    if(/*gameObj !== undefined && */event.code === "ArrowUp"){
+        gameObj.dragonite.dragoniteMoveUp()
     }
-})*/
+})
+window.addEventListener("keydown", (event) => {
+    if(/*gameObj !== undefined && */event.code === "ArrowDown"){
+        gameObj.dragonite.dragoniteMoveDown()
+    }
+})

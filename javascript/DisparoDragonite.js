@@ -3,11 +3,11 @@ class DisparoDragonite {
         this.img = new Image()
         this.img.src = "img/fuego1.png";
         
-        this.x = 0;
-        this.y = 0;
+        this.x = this.dragonite.x ;  //todo //quiero que la posicion X del disparo sea igual a donde se encuentra dragonite en ese momento
+        this.y = this.dragonite.y ;  //todo //lo mismo con Y
         this.w = 0;
         this.h = 0;
-        this.speed = 2;
+        this.speed = 8;
         
     }
 
@@ -17,5 +17,9 @@ class DisparoDragonite {
     
     move = () => {
         this.x += this.speed
+    }
+
+    disparar = () => {
+        
     }
 }

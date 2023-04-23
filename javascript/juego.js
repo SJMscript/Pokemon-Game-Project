@@ -79,7 +79,8 @@ class Juego {
     disparaGengar = () => {
         //? debería hacer un forEach para cada uno de los disparos de Gengar??
     }
-    
+
+
 
     removerDisparoDragonite = () => { //! importante remover del juego elementos que salen del canvas
 
@@ -99,8 +100,8 @@ class Juego {
 
     //* bonus 
     drawScore = () =>{
-        ctx.font = "30px Comic Sans MS"
-        ctx.strokeText(Math.floor(this.score), 300, 30)
+        ctx.font = "40px Comic Sans MS"
+        ctx.strokeText(Math.floor(this.score), 400, 50)
     }
 
     gameLoop = () => {  //! aqui lo que se hace automáticamente
@@ -113,6 +114,7 @@ class Juego {
         
         this.gengar.move()
         this.gengar.rebotar()
+        this.dragonite.rebotar()
 
 
         //! 3 EL dibujado de los elementos ---> EL ORDEN ES IMPORTANTÍSIMO
@@ -120,6 +122,8 @@ class Juego {
         this.dragonite.draw()
         this.gengar.draw()
         this.drawScore()
+        this.disparaDragonite.draw()
+        this.disparaGengar.draw()
 
         //* 4 recursión (requesAnimationFrame)
         if(this.isGameOn === true){
