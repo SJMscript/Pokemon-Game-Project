@@ -25,7 +25,7 @@ class DisparoDragonite {
 
 
 
-function sumAndMultiply (patata1, patata2) {
+/*function sumAndMultiply (patata1, patata2) {
     // let patata1 = 
     return (patata1 + patata2) * 20
 }
@@ -37,4 +37,4 @@ sum(10, 40)
 
 let num1 = 10;
 let num2 = 20;
-sum(num1, num2)
+sum(num1, num2)*/

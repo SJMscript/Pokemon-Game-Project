@@ -10,14 +10,15 @@ class Juego {
 
         //* Dragonite
         this.dragonite = new Dragonite()
+        this.disparosDragoniteArr = [];
 
 
         //* Gengar
         this.gengar = new Gengar()
-
-
-        this.disparosDragoniteArr = [];
         this.disparosGengarArr = [];
+        this.isGengarFiring = true;
+
+
 
         this.isGameOn = true; //? condicional con lo ultimo del codigo que es la recursión
 
@@ -37,7 +38,7 @@ class Juego {
         //* necesitamos checkear 
         //* this.dragonite
         //* this.disparoGengar
-        this.tubosArr.forEach((eachTubo) => {
+       /* this.tubosArr.forEach((eachTubo) => {
             //! eachTubo vs this.pollito
             if (
                 eachTubo.x < this.pollito.x + this.pollito.w &&
@@ -49,7 +50,7 @@ class Juego {
                 console.log("pollito golpeado")
                 this.gameOver()
               } 
-        })
+        })*/
     }
 
     gameOver = () =>{  //! nunca nos podemos olvidar de detener el juego
@@ -79,7 +80,15 @@ class Juego {
     }
 
     disparaGengar = () => {
-        
+        if(this.isGengarFiring === true){
+            let nuevoDisparoGengar = new DisparoGengar(this.gengar.x, this.gengar.y)
+            this.disparosGengarArr.push(nuevoDisparoGengar)
+            this.isGengarFiring = false;
+            setTimeout(()=>{
+                this.isGengarFiring = true;
+            }, 2000)
+        }
+        console.log("gengar ha disparado")
     }
 
 
@@ -111,12 +120,14 @@ class Juego {
 
         //! 1 limpieza del canvas
         //todo 
+        this.clearCanvas()
 
         //! 2 acciones y movimientos de elementos (ACCIONES AUTOMÁTICAS)
         
         this.gengar.move()
         this.gengar.rebotar()
         //this.dragonite.rebotar()
+        this.disparaGengar()
 
 
         //! 3 EL dibujado de los elementos ---> EL ORDEN ES IMPORTANTÍSIMO
@@ -128,6 +139,11 @@ class Juego {
         this.disparosDragoniteArr.forEach((eachDisparoDragonite)=>{   
             eachDisparoDragonite.move()
             eachDisparoDragonite.draw()
+        })
+
+        this.disparosGengarArr.forEach((eachDisparoGengar)=>{
+            eachDisparoGengar.move()
+            eachDisparoGengar.draw()
         })
 
         //this.disparaDragonite.draw()
