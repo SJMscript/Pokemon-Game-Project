@@ -34,24 +34,7 @@ class Juego {
 
 
 
-    colisionDragoniteDisparoGengar = () =>{
-        //* necesitamos checkear 
-        //* this.dragonite
-        //* this.disparoGengar
-       /* this.tubosArr.forEach((eachTubo) => {
-            //! eachTubo vs this.pollito
-            if (
-                eachTubo.x < this.pollito.x + this.pollito.w &&
-                eachTubo.x + eachTubo.w > this.pollito.x &&
-                eachTubo.y < this.pollito.y + this.pollito.h &&
-                eachTubo.h + eachTubo.y > this.pollito.y
-              ) {
-                // Collision detected!
-                console.log("pollito golpeado")
-                this.gameOver()
-              } 
-        })*/
-    }
+   
 
     gameOver = () =>{  //! nunca nos podemos olvidar de detener el juego
         // 1 detener el juego
@@ -109,6 +92,48 @@ class Juego {
         } 
     }
 
+    colisionDragoniteDisparoGengar = () =>{
+        //* necesitamos checkear 
+        //* this.dragonite
+        //* this.disparoGengar
+        this.disparosDragoniteArr.forEach((eachDisparoDragonite) => {
+            //! each disparo vs Gengar
+            if (
+                eachDisparoDragonite.x < this.gengar.x + this.gengar.w &&
+                eachDisparoDragonite.x + eachDisparoDragonite.w > this.gengar.x &&
+                eachDisparoDragonite.y < this.gengar.y + this.gengar.h &&
+                eachDisparoDragonite.h + eachDisparoDragonite.y > this.gengar.y             
+              ) {
+                // Collision detected!
+                console.log("gengar dañado")
+                //this.gameOver()
+                this.score++
+              } 
+        })
+    }
+
+    colisionGengarDisparoDragonite = () =>{
+        //* necesitamos checkear 
+        //* this.dragonite
+        //* this.disparoGengar
+        this.disparosGengarArr.forEach((eachDisparoGengar) => {
+            //! each disparo vs Gengar
+            if (
+                eachDisparoGengar.x < this.dragonite.x + this.dragonite.w &&
+                eachDisparoGengar.x + eachDisparoGengar.w > this.dragonite.x &&
+                eachDisparoGengar.y < this.dragonite.y + this.dragonite.h &&
+                eachDisparoGengar.h + eachDisparoGengar.y > this.dragonite.y             
+              ) {
+                // Collision detected!
+                console.log("dragonite dañado")
+                //this.gameOver()
+                this.score--
+              } 
+        })
+    }
+
+
+
     //* bonus 
     drawScore = () =>{
         ctx.font = "40px Comic Sans MS"
@@ -116,7 +141,7 @@ class Juego {
     }
 
     gameLoop = () => {  //! aqui lo que se hace automáticamente
-        console.log("ejecutando recursion")
+        //console.log("ejecutando recursion")
 
         //! 1 limpieza del canvas
         //todo 
@@ -128,6 +153,8 @@ class Juego {
         this.gengar.rebotar()
         //this.dragonite.rebotar()
         this.disparaGengar()
+        this.colisionDragoniteDisparoGengar()
+        this.colisionGengarDisparoDragonite()
 
 
         //! 3 EL dibujado de los elementos ---> EL ORDEN ES IMPORTANTÍSIMO
