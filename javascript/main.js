@@ -10,7 +10,7 @@ const canvas = document.querySelector("#my-canvas")
 
 const ctx = canvas.getContext("2d")
 
-let gameObj;
+let elementosJuego;
 
 
 //* FUNCTIONS
@@ -23,11 +23,11 @@ const startGame = () => {
     
 
     //! 2do --> crear los elementos del juego
-    gameObj = new Juego() 
-    console.log(gameObj)
+    elementosJuego = new Juego() 
+    console.log(elementosJuego)
 
     //! 3ro --> Iniciar el bucle
-    gameObj.gameLoop()
+    elementosJuego.gameLoop()
 
 }
 
@@ -44,12 +44,18 @@ startBtnDOM.addEventListener("click", startGame)
 // restartBtnDOM.addEventListener("click", restartGame)
 
 window.addEventListener("keydown", (event) => {
-    if(/*gameObj !== undefined && */event.code === "ArrowUp"){
-        gameObj.dragonite.dragoniteMoveUp()
+    if(event.code === "ArrowUp"){
+        elementosJuego.dragonite.dragoniteMoveUp()
     }
 })
 window.addEventListener("keydown", (event) => {
-    if(/*gameObj !== undefined && */event.code === "ArrowDown"){
-        gameObj.dragonite.dragoniteMoveDown()
+    if(event.code === "ArrowDown"){
+        elementosJuego.dragonite.dragoniteMoveDown()
+    }
+})
+
+window.addEventListener("keydown", (event) => {
+    if(  event.code === "Space"){
+    elementosJuego.disparaDragonite()
     }
 })

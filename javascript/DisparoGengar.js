@@ -3,10 +3,10 @@ class DisparoGengar {
         this.img = new Image()
         this.img.src = "img/psiquico1.png";
         
-        this.x = this.gengar.x; //todo quiero que la posicion de x de la que salga el disparo sea igual a la del gengar en el momento del disparo
+        this.x = this.gengar.x - 10; //todo quiero que la posicion de x de la que salga el disparo sea igual a la del gengar en el momento del disparo
         this.y = this.gengar.y; //todo lo mismo con la posicion en y
         this.w = 12;
-        this.h = 5;
+        this.h = 7;
         this.speed = 8;
         this.timer = 0;
         

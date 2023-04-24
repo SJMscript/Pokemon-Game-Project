@@ -1,13 +1,13 @@
 class DisparoDragonite {
-    constructor() {
+    constructor(playerX, playerY) {
         this.img = new Image()
-        this.img.src = "img/fuego1.png";
+        this.img.src = "img/fuego2.png";
         
-        this.x = this.dragonite.x ;  //todo //quiero que la posicion X del disparo sea igual a donde se encuentra dragonite en ese momento
-        this.y = this.dragonite.y ;  //todo //lo mismo con Y
-        this.w = 0;
-        this.h = 0;
-        this.speed = 8;
+        this.x = playerX +10 ;  //todo //quiero que la posicion X del disparo sea igual a donde se encuentra dragonite en ese momento
+        this.y = playerY ;  //todo //lo mismo con Y
+        this.w = 40;
+        this.h = 25;
+        this.speed = 3;
         
     }
 
@@ -19,7 +19,22 @@ class DisparoDragonite {
         this.x += this.speed
     }
 
-    disparar = () => {
-        
-    }
 }
+
+
+
+
+
+function sumAndMultiply (patata1, patata2) {
+    // let patata1 = 
+    return (patata1 + patata2) * 20
+}
+
+
+
+sum(5, 20)
+sum(10, 40)
+
+let num1 = 10;
+let num2 = 20;
+sum(num1, num2)

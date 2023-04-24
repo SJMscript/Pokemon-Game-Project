@@ -1,7 +1,7 @@
 class Gengar{
 
     constructor(){
-        //* Propiedades de Dragonite
+        //* Propiedades de Gengar
         this.img = new Image()
         this.img.src = "img/gengar1.png"
         this.x = 670; // la posicion en X

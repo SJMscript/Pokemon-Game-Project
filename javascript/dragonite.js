@@ -21,19 +21,27 @@ class Dragonite{
     }
 
     dragoniteMoveUp = () => {
-        this.y -= 4;
+        if(this.y  >= 0){
+            this.y -= 4;
+        } else{
+            this.y += 4;
+        }
     }
 
     dragoniteMoveDown = () => {
-        this.y += 4;
-    }
-    
-    rebotar = () => {
-        if(this.y + this.h >= canvas.height){
-            this.isDirectionDown = false;
-        } else if(this.y < 0 ){
-            this.isDirectionDown = true;
+        if(this.y + this.h <= canvas.height){
+            this.y += 4;
+        } else {
+            this.y -= 4;
         }
     }
+    
+    /*rebotar = () => {
+        if(this.y + this.h >= canvas.height){
+            this.isDirectionDown = false;
+        } else if(this.y + this.h < 0 ){
+            this.isDirectionDown = true;
+        }
+    }*/
 
 }

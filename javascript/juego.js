@@ -73,11 +73,13 @@ class Juego {
     }
 
     disparaDragonite = () => {
-        //? debería hacer un forEach para cada uno de los disparos de Dragonite??
+            let nuevoDisparoDragonite = new DisparoDragonite(this.dragonite.x, this.dragonite.y)
+            this.disparosDragoniteArr.push(nuevoDisparoDragonite)
+        
     }
 
     disparaGengar = () => {
-        //? debería hacer un forEach para cada uno de los disparos de Gengar??
+        
     }
 
 
@@ -114,7 +116,7 @@ class Juego {
         
         this.gengar.move()
         this.gengar.rebotar()
-        this.dragonite.rebotar()
+        //this.dragonite.rebotar()
 
 
         //! 3 EL dibujado de los elementos ---> EL ORDEN ES IMPORTANTÍSIMO
@@ -122,8 +124,14 @@ class Juego {
         this.dragonite.draw()
         this.gengar.draw()
         this.drawScore()
-        this.disparaDragonite.draw()
-        this.disparaGengar.draw()
+
+        this.disparosDragoniteArr.forEach((eachDisparoDragonite)=>{   
+            eachDisparoDragonite.move()
+            eachDisparoDragonite.draw()
+        })
+
+        //this.disparaDragonite.draw()
+        //this.disparaGengar.draw()
 
         //* 4 recursión (requesAnimationFrame)
         if(this.isGameOn === true){
