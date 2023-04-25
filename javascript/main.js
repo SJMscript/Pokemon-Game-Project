@@ -35,7 +35,7 @@ const startGame = () => {
 const restartGame = () => {
     gameoverScreenDom.style.display = "none";
     canvas.style.display = "block"
-    gameObj = new Game() 
+    gameObj = new Juego() 
     gameObj.gameLoop()
 }
 

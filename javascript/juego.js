@@ -11,6 +11,7 @@ class Juego {
         //* Dragonite
         this.dragonite = new Dragonite()
         this.disparosDragoniteArr = [];
+        this.isDragoniteFiring = true;
 
 
         //* Gengar
@@ -48,10 +49,10 @@ class Juego {
     }
 
     scoreAndGameOver = () => {
-        if(this.score >= 400){
+        if(this.score >= 100){
             this.gameOver()
             console.log("Hemos ganado")
-        } else if(this.score <= -400){
+        } else if(this.score <= -100){
             this.gameOver()
             console.log("hemos perdido")
         }
@@ -67,8 +68,14 @@ class Juego {
     }
 
     disparaDragonite = () => {
+        if(this.isDragoniteFiring === true){
             let nuevoDisparoDragonite = new DisparoDragonite(this.dragonite.x, this.dragonite.y)
             this.disparosDragoniteArr.push(nuevoDisparoDragonite)
+            this.isDragoniteFiring = false
+            setTimeout(()=>{
+                this.isDragoniteFiring = true;
+            }, 1500)
+        }
         
     }
 
