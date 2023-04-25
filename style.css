@@ -1,3 +1,8 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+
+
 body{
     margin: 0;
     background-color: lightgrey;
@@ -10,7 +15,7 @@ body{
     box-shadow: 10px 10px 5px 5px #888888;
 }
 
-#start-btn, #restart-btn {
+#start-btn {
     background-color: yellow;
     width: 170px;
     height: 70px;
@@ -18,6 +23,17 @@ body{
     color: blue;
     font-weight: bold;
     font-size: 29px;
+}
+
+#restart-btn {
+    background-color: yellow;
+    width: 270px;
+    height: 70px;
+    border-radius: 60px;
+    color: blue;
+    font-weight: bold;
+    font-size: 29px;
+    margin: 20px;
 }
 
 .container {
@@ -37,7 +53,22 @@ body{
     margin-bottom: 60px;
 }
 
-#section{
+/*#section{
     background-image: url("img/gengarfamily.jpg");
+    height: 400px; 
+}*/
+
+#gengar-family {
+    margin: 25px;
+    box-shadow: 15px 14px 5px 0px rgba(0,0,0,0.76);
+}
+
+#span1 {
+    font-size: 52px;
+    font-family: 'Creepster', cursive;
+    margin: 20px;
+}
+
+#final-img{
     height: 480px;
 }

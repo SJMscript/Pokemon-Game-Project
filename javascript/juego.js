@@ -47,6 +47,16 @@ class Juego {
         gameoverScreenDom.style.display = "flex";
     }
 
+    scoreAndGameOver = () => {
+        if(this.score >= 400){
+            this.gameOver()
+            console.log("Hemos ganado")
+        } else if(this.score <= -400){
+            this.gameOver()
+            console.log("hemos perdido")
+        }
+    }
+
 
     drawBackground = () =>{
         ctx.drawImage(this.background, 0, 0, canvas.width, canvas.height)
@@ -71,7 +81,7 @@ class Juego {
                 this.isGengarFiring = true;
             }, 2000)
         }
-        console.log("gengar ha disparado")
+        //console.log("gengar ha disparado")
     }
 
 
@@ -105,8 +115,8 @@ class Juego {
                 eachDisparoDragonite.h + eachDisparoDragonite.y > this.gengar.y             
               ) {
                 // Collision detected!
-                console.log("gengar dañado")
-                //this.gameOver()
+                //console.log("gengar dañado")
+
                 this.score++
               } 
         })
@@ -125,8 +135,8 @@ class Juego {
                 eachDisparoGengar.h + eachDisparoGengar.y > this.dragonite.y             
               ) {
                 // Collision detected!
-                console.log("dragonite dañado")
-                //this.gameOver()
+                //console.log("dragonite dañado")
+
                 this.score--
               } 
         })
@@ -162,6 +172,7 @@ class Juego {
         this.dragonite.draw()
         this.gengar.draw()
         this.drawScore()
+        this.scoreAndGameOver()
 
         this.disparosDragoniteArr.forEach((eachDisparoDragonite)=>{   
             eachDisparoDragonite.move()
@@ -173,8 +184,6 @@ class Juego {
             eachDisparoGengar.draw()
         })
 
-        //this.disparaDragonite.draw()
-        //this.disparaGengar.draw()
 
         //* 4 recursión (requesAnimationFrame)
         if(this.isGameOn === true){

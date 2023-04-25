@@ -21,6 +21,7 @@ const startGame = () => {
     splashScreenDOM.style.display = "none";
     canvas.style.display = "block"
     
+    
 
     //! 2do --> crear los elementos del juego
     elementosJuego = new Juego() 
@@ -31,17 +32,17 @@ const startGame = () => {
 
 }
 
-/*const restartGame = () => {
+const restartGame = () => {
     gameoverScreenDom.style.display = "none";
     canvas.style.display = "block"
     gameObj = new Game() 
     gameObj.gameLoop()
-}*/
+}
 
 
 // * EVENTOS
 startBtnDOM.addEventListener("click", startGame)
-// restartBtnDOM.addEventListener("click", restartGame)
+restartBtnDOM.addEventListener("click", restartGame)
 
 window.addEventListener("keydown", (event) => {
     if(event.code === "ArrowUp"){
