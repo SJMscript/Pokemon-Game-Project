@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 
 
@@ -7,6 +8,23 @@ body{
     margin: 0;
     background-color: lightgrey;
     
+}
+
+#play,#stop{
+	display:inline-flex;
+	padding:16px;
+	border:1px solid #000;
+	border-radius:5px;
+    height: 15px;
+    
+}
+iframe{display:none;
+}
+
+#play:hover ,#stop:hover{
+    color: red;
+    font-weight: bold;
+    border-color: red;
 }
 
 #my-canvas{
@@ -41,7 +59,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 45px;
+    margin-bottom: 25px;
 }
 
 #my-canvas, #gameover-screen {
@@ -71,4 +89,11 @@ body{
 
 #final-img{
     height: 480px;
+}
+
+#span2{
+    font-family: 'Anton', sans-serif;
+    font-size: 52px;
+    margin: 20px;
+    color: steelblue;
 }
