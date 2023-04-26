@@ -7,14 +7,14 @@ const gameoverScreenDom = document.querySelector("#gameover-screen")
 const startBtnDOM = document.querySelector("#start-btn")
 const restartBtnDOM = document.querySelector("#restart-btn")
 const canvas = document.querySelector("#my-canvas")
-
+const instruccionesDOM = document.querySelector("#instrucciones")
 const ctx = canvas.getContext("2d")
 
 let elementosJuego;
 
 this.background = new Image()
 this.background.src = "img/arena-background1.jpg"
-
+instruccionesDOM.style.display = "none"
 
 //* FUNCTIONS
 
@@ -23,6 +23,8 @@ const startGame = () => {
     //! 1er paso --> cambiar pantallas de juego
     splashScreenDOM.style.display = "none";
     canvas.style.display = "block"
+    instruccionesDOM.style.display = "block"
+
     
     
 
@@ -38,8 +40,9 @@ const startGame = () => {
 const restartGame = () => {
     gameoverScreenDom.style.display = "none";
     canvas.style.display = "block"
-    gameObj = new Juego() 
-    gameObj.gameLoop()
+    elementosJuego = new Juego() 
+    elementosJuego.gameLoop()
+    //instruccionesDOM.style.display = "none"
 }
 
 

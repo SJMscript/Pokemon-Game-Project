@@ -114,3 +114,16 @@ body {
     background-image: url("img/arena-background4.jpg");
     background-size: cover;
   }
+
+  #instrucciones{
+    position: absolute;
+    top: 400px;
+    left: 40px;
+    background-color: aliceblue;
+    border-radius: 20px;
+    margin: 10px;
+    text-decoration: none;
+
+    color: #888888;
+    
+  }

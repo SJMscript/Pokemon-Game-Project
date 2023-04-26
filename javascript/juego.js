@@ -46,13 +46,14 @@ class Juego {
 
         // mostrar pantalla final
         gameoverScreenDom.style.display = "flex";
+        this.instruccionesDOM.style.display = "none"
     }
 
     scoreAndGameOver = () => {
-        if(this.score >= 100){
+        if(this.score >= 3){
             this.gameOver()
             console.log("Hemos ganado")
-        } else if(this.score <= -100){
+        } else if(this.score <= -3){
             this.gameOver()
             console.log("hemos perdido")
         }
@@ -99,7 +100,7 @@ class Juego {
             this.disparosDragoniteArr.shift()
             this.score += 1;
         } 
-    }     
+    }
 
     removerDisparoGengar = () => { //! importante remover del juego elementos que salen del canvas
 
@@ -123,7 +124,8 @@ class Juego {
               ) {
                 // Collision detected!
                 //console.log("gengar dañado")
-
+                //this.disparosDragoniteArr.shift(eachDisparoDragonite)
+                this.disparosDragoniteArr.splice(0, 1)
                 this.score++
               } 
         })
@@ -143,7 +145,8 @@ class Juego {
               ) {
                 // Collision detected!
                 //console.log("dragonite dañado")
-
+                //this.disparosGengarArr.shift(eachDisparoGengar)
+                this.disparosGengarArr.splice(0, 1)
                 this.score--
               } 
         })
