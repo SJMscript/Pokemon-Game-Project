@@ -110,7 +110,7 @@ iframe{display:none;
 body {
     margin: 0;
     /*background-image: url("img/arena-background1.jpg");*/
+    /*background-image: url("../Pokemon_Project/img/arena-background4.jpg");*/
     background-image: url("img/arena-background4.jpg");
-    /*background-image: url("img/arena-background4.jpg");*/
     background-size: cover;
   }
