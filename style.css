@@ -13,10 +13,11 @@ body{
 #play,#stop{
 	display:inline-flex;
 	padding:16px;
-	border:1px solid #000;
+	border:1px groove white;
 	border-radius:5px;
     height: 15px;
-    
+    color: beige;
+    border-width:  5px;
 }
 iframe{display:none;
 }
@@ -82,9 +83,10 @@ iframe{display:none;
 }
 
 #span1 {
-    font-size: 52px;
+    font-size: 62px;
     font-family: 'Creepster', cursive;
-    margin: 20px;
+    margin: 10px;
+    background-color: lightgray;
 }
 
 #final-img{
@@ -105,8 +107,10 @@ iframe{display:none;
 }
 
 
-/*body {
+body {
     margin: 0;
-    background-image: url(https://fondosmil.com/fondo/23829.jpg);
+    /*background-image: url("img/arena-background1.jpg");*/
+    background-image: url("img/arena-background4.jpg");
+    /*background-image: url("img/arena-background4.jpg");*/
     background-size: cover;
-  }*/
+  }

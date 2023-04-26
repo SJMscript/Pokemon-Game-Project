@@ -12,6 +12,9 @@ const ctx = canvas.getContext("2d")
 
 let elementosJuego;
 
+this.background = new Image()
+this.background.src = "img/arena-background1.jpg"
+
 
 //* FUNCTIONS
 
