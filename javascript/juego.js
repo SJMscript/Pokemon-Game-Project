@@ -86,14 +86,14 @@ class Juego {
 
 
 
-    removerDisparoDragonite = () => { //! importante remover del juego elementos que salen del canvas
+    removerDisparoDragonite = () => { 
 
         if(this.disparosDragoniteArr.length > 0 &&  this.disparosDragoniteArr[0].x + this.disparosDragoniteArr[0].w > 800 ){
             this.disparosDragoniteArr.shift()
         } 
     }
 
-    removerDisparoGengar = () => { //! importante remover del juego elementos que salen del canvas
+    removerDisparoGengar = () => { 
 
         if(this.disparosGengarArr.length > 0 &&  this.disparosGengarArr[0].x + this.disparosGengarArr[0].w < 0 ){
             this.disparosGengarArr.shift()
@@ -105,7 +105,7 @@ class Juego {
         //* this.dragonite
         //* this.disparoGengar
         this.disparosDragoniteArr.forEach((eachDisparoDragonite) => {
-            //! each disparo vs Gengar
+            
             if (
                 eachDisparoDragonite.x < this.gengar.x + this.gengar.w &&
                 eachDisparoDragonite.x + eachDisparoDragonite.w > this.gengar.x &&
@@ -123,7 +123,7 @@ class Juego {
         //* this.dragonite
         //* this.disparoGengar
         this.disparosGengarArr.forEach((eachDisparoGengar) => {
-            //! each disparo vs Gengar
+            
             if (
                 eachDisparoGengar.x < this.dragonite.x + this.dragonite.w &&
                 eachDisparoGengar.x + eachDisparoGengar.w > this.dragonite.x &&
