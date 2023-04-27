@@ -12,7 +12,8 @@ class Juego {
         this.dragonite = new Dragonite()
         this.disparosDragoniteArr = [];
         this.isDragoniteFiring = true;
-
+        this.superDisparoArr = [];
+        this.isDragoniteSuperFiring =[];
 
         //* Gengar
         this.gengar = new Gengar()
@@ -39,16 +40,27 @@ class Juego {
 
         // mostrar pantalla final
         gameoverScreenDom.style.display = "flex";
-        instruccionesDOM.style.display = "none"
+        instruccionesDOM.style.display = "none";
+    }
+
+    ganarJuego = () =>{
+    this.isGameOn = false;
+    canvas.style.display = "none";
+    winScreenDOM.style.display = "flex";
+    instruccionesDOM.style.display = "none";
     }
 
     scoreAndGameOver = () => {
-        if(this.score >= 5){
-            this.gameOver()
-            console.log("Hemos ganado")
-        } else if(this.score <= -5){
+        if(this.score <= -4){
             this.gameOver()
             console.log("hemos perdido")
+        }
+    }
+
+    scoreAndWin = () => {
+        if(this.score >= 4){
+            this.ganarJuego()
+            console.log("Hemos ganado")
         }
     }
 
@@ -84,6 +96,16 @@ class Juego {
         }
     }
 
+    superDisparo = () => {
+        if(this.isDragoniteFiring === true && this.score > 3){
+            let nuevoSuperDisparo = new SuperDisparo(this.dragonite.x, this.dragonite.y)
+            this.superDisparoArr.push(nuevoSuperDisparo)
+            this.isDragoniteFiring = false
+            setTimeout(()=>{
+                this.isDragoniteFiring = true;
+            }, 1500)
+    }
+    }
 
 
     removerDisparoDragonite = () => { 
@@ -168,6 +190,7 @@ class Juego {
         this.gengar.draw()
         this.drawScore()
         this.scoreAndGameOver()
+        this.scoreAndWin()
 
         this.disparosDragoniteArr.forEach((eachDisparoDragonite)=>{   
             eachDisparoDragonite.move()

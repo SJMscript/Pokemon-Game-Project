@@ -6,15 +6,19 @@ const splashScreenDOM = document.querySelector("#splash-screen")
 const gameoverScreenDom = document.querySelector("#gameover-screen")
 const startBtnDOM = document.querySelector("#start-btn")
 const restartBtnDOM = document.querySelector("#restart-btn")
+const restartBtnDOM2 = document.querySelector("#restart-btn2")
 const canvas = document.querySelector("#my-canvas")
 const instruccionesDOM = document.querySelector("#instrucciones")
 const ctx = canvas.getContext("2d")
+const winScreenDOM = document.querySelector("#win-screen")
 
 let elementosJuego;
 
 this.background = new Image()
 this.background.src = "img/arena-background1.jpg"
 instruccionesDOM.style.display = "none"
+winScreenDOM.style.display= "none"
+
 
 //* FUNCTIONS
 
@@ -39,15 +43,19 @@ const startGame = () => {
 
 const restartGame = () => {
     gameoverScreenDom.style.display = "none";
+    winScreenDOM.style.display= "none"
     canvas.style.display = "block"
     elementosJuego = new Juego() 
     elementosJuego.gameLoop()
 }
 
 
+
+
 // * EVENTOS
 startBtnDOM.addEventListener("click", startGame)
 restartBtnDOM.addEventListener("click", restartGame)
+restartBtnDOM2.addEventListener("click", restartGame)
 
 window.addEventListener("keydown", (event) => {
     if(event.code === "ArrowUp"){

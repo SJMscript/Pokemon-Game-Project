@@ -1,4 +1,4 @@
-/*class SuperDisparo {
+class SuperDisparo {
     constructor(playerX, playerY) {
         this.img = new Image()
         this.img.src = "img/dragon-attack1-transformed.png";
@@ -19,4 +19,4 @@
         this.x += this.speed
     }
 
-}*/
+}

@@ -13,7 +13,6 @@ class Dragonite{
     }
 
     //! Acciones de Dragonite
-    //? dibujo Dragonite
 
     draw = () => {
         ctx.drawImage(this.img, this.x, this.y, this.w, this.h)
