@@ -21,7 +21,7 @@ class Juego {
 
 
 
-        this.isGameOn = true; //? condicional con lo ultimo del codigo que es la recursión
+        this.isGameOn = true; 
 
         //* contador
         this.score = 0;
@@ -29,13 +29,6 @@ class Juego {
 
     //! Métodos del juego ----> todas las acciones que se realizan en el juego
 
-
-    //? movimientos del dragonite y del gengar, contador aumente, colisiones
-    //? se termina el juego accion, accion de pausar 
-
-
-
-   
 
     gameOver = () =>{  //! nunca nos podemos olvidar de detener el juego
         // 1 detener el juego
@@ -50,10 +43,10 @@ class Juego {
     }
 
     scoreAndGameOver = () => {
-        if(this.score >= 3){
+        if(this.score >= 5){
             this.gameOver()
             console.log("Hemos ganado")
-        } else if(this.score <= -3){
+        } else if(this.score <= -5){
             this.gameOver()
             console.log("hemos perdido")
         }
@@ -89,24 +82,21 @@ class Juego {
                 this.isGengarFiring = true;
             }, 2000)
         }
-        //console.log("gengar ha disparado")
     }
 
 
 
     removerDisparoDragonite = () => { //! importante remover del juego elementos que salen del canvas
 
-        if(this.disparosDragoniteArr[0].x + this.disparosDragoniteArr[0].w > 800 ){
+        if(this.disparosDragoniteArr.length > 0 &&  this.disparosDragoniteArr[0].x + this.disparosDragoniteArr[0].w > 800 ){
             this.disparosDragoniteArr.shift()
-            this.score += 1;
         } 
     }
 
     removerDisparoGengar = () => { //! importante remover del juego elementos que salen del canvas
 
-        if(this.disparosGengarArr[0].x + this.disparosGengarArr[0].w < 0 ){
+        if(this.disparosGengarArr.length > 0 &&  this.disparosGengarArr[0].x + this.disparosGengarArr[0].w < 0 ){
             this.disparosGengarArr.shift()
-            this.score += 1;
         } 
     }
 
@@ -122,9 +112,6 @@ class Juego {
                 eachDisparoDragonite.y < this.gengar.y + this.gengar.h &&
                 eachDisparoDragonite.h + eachDisparoDragonite.y > this.gengar.y             
               ) {
-                // Collision detected!
-                //console.log("gengar dañado")
-                //this.disparosDragoniteArr.shift(eachDisparoDragonite)
                 this.disparosDragoniteArr.splice(0, 1)
                 this.score++
               } 
@@ -143,9 +130,7 @@ class Juego {
                 eachDisparoGengar.y < this.dragonite.y + this.dragonite.h &&
                 eachDisparoGengar.h + eachDisparoGengar.y > this.dragonite.y             
               ) {
-                // Collision detected!
-                //console.log("dragonite dañado")
-                //this.disparosGengarArr.shift(eachDisparoGengar)
+
                 this.disparosGengarArr.splice(0, 1)
                 this.score--
               } 
@@ -161,7 +146,6 @@ class Juego {
     }
 
     gameLoop = () => {  //! aqui lo que se hace automáticamente
-        //console.log("ejecutando recursion")
 
         //! 1 limpieza del canvas
         //todo 
@@ -171,10 +155,11 @@ class Juego {
         
         this.gengar.move()
         this.gengar.rebotar()
-        //this.dragonite.rebotar()
         this.disparaGengar()
         this.colisionDragoniteDisparoGengar()
         this.colisionGengarDisparoDragonite()
+        this.removerDisparoDragonite()
+        this.removerDisparoGengar()
 
 
         //! 3 EL dibujado de los elementos ---> EL ORDEN ES IMPORTANTÍSIMO
@@ -203,6 +188,3 @@ class Juego {
     }
 
 }
-
-
-//todo --> botón pausa

@@ -1,7 +1,7 @@
-class DisparoDragonite {
+/*class SuperDisparo {
     constructor(playerX, playerY) {
         this.img = new Image()
-        this.img.src = "img/fuego2-transformed.png";
+        this.img.src = "img/dragon-attack1-transformed.png";
         
         this.x = playerX +10 ; 
         this.y = playerY ; 
@@ -19,5 +19,4 @@ class DisparoDragonite {
         this.x += this.speed
     }
 
-}
-
+}*/

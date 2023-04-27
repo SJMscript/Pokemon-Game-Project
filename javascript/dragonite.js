@@ -36,12 +36,4 @@ class Dragonite{
         }
     }
     
-    /*rebotar = () => {
-        if(this.y + this.h >= canvas.height){
-            this.isDirectionDown = false;
-        } else if(this.y + this.h < 0 ){
-            this.isDirectionDown = true;
-        }
-    }*/
-
 }

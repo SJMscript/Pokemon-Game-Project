@@ -42,7 +42,6 @@ const restartGame = () => {
     canvas.style.display = "block"
     elementosJuego = new Juego() 
     elementosJuego.gameLoop()
-    //instruccionesDOM.style.display = "none"
 }
 
 
@@ -55,6 +54,7 @@ window.addEventListener("keydown", (event) => {
         elementosJuego.dragonite.dragoniteMoveUp()
     }
 })
+
 window.addEventListener("keydown", (event) => {
     if(event.code === "ArrowDown"){
         elementosJuego.dragonite.dragoniteMoveDown()

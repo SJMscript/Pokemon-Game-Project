@@ -72,22 +72,13 @@ iframe{display:none;
     margin-bottom: 30px;
 }
 
-/*#section{
-    background-image: url("img/gengarfamily.jpg");
-    height: 400px; 
-}*/
 
 #gengar-family {
     margin: 25px;
     box-shadow: 15px 14px 5px 0px rgba(0,0,0,0.76);
+    border-radius: 30px;
 }
 
-#span1 {
-    font-size: 62px;
-    font-family: 'Creepster', cursive;
-    margin: 10px;
-    background-color: lightgray;
-}
 
 #final-img{
     height: 480px;
@@ -97,7 +88,9 @@ iframe{display:none;
     font-family: 'Anton', sans-serif;
     font-size: 52px;
     margin: 20px;
-    color: steelblue;
+    color: white;
+
+    text-shadow: 4px 4px 0px rgba(6, 0, 0, 1);
 }
 
 #music{
@@ -109,8 +102,6 @@ iframe{display:none;
 
 body {
     margin: 0;
-    /*background-image: url("img/arena-background1.jpg");*/
-    /*background-image: url("../Pokemon_Project/img/arena-background4.jpg");*/
     background-image: url("img/arena-background4.jpg");
     background-size: cover;
   }
@@ -127,3 +118,8 @@ body {
     color: #888888;
     
   }
+
+  #splash-screen{
+    display: flex;
+  }
+
