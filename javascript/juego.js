@@ -39,7 +39,7 @@ class Juego {
 
         // mostrar pantalla final
         gameoverScreenDom.style.display = "flex";
-        this.instruccionesDOM.style.display = "none"
+        instruccionesDOM.style.display = "none"
     }
 
     scoreAndGameOver = () => {
