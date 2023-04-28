@@ -21,17 +21,17 @@ class Dragonite{
 
     dragoniteMoveUp = () => {
         if(this.y  >= 0){
-            this.y -= 4;
+            this.y -= 8;
         } else{
-            this.y += 4;
+            this.y += 8;
         }
     }
 
     dragoniteMoveDown = () => {
         if(this.y + this.h <= canvas.height){
-            this.y += 4;
+            this.y += 8;
         } else {
-            this.y -= 4;
+            this.y -= 8;
         }
     }
     
