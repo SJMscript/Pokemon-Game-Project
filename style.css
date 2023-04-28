@@ -82,6 +82,8 @@ iframe{display:none;
 
 #final-img{
     height: 480px;
+    border-radius: 30px;
+    box-shadow: 15px 14px 5px 0px lightgray;
 }
 
 #span2{

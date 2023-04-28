@@ -51,14 +51,14 @@ class Juego {
     }
 
     scoreAndGameOver = () => {
-        if(this.score <= -4){
+        if(this.score <= -5){
             this.gameOver()
             console.log("hemos perdido")
         }
     }
 
     scoreAndWin = () => {
-        if(this.score >= 4){
+        if(this.score >= 5){
             this.ganarJuego()
             console.log("Hemos ganado")
         }
